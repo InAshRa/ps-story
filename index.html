@@ -1,1 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бриф для партнёра — поиск поставщиков</title>
+<style>
+:root{--bg:#0b1020;--text:#eef3ff;--muted:#aeb9d6;--p:#6ea8fe;--s:#7ee2c7;--a:#ffd166}*{box-sizing:border-box}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse 80% 50% at 10% -10%,#1a3a5c 0,transparent 50%),radial-gradient(ellipse 60% 40% at 90% 20%,#0f2a3a 0,transparent 45%),linear-gradient(#0b1020,#060a14);color:var(--text);line-height:1.65}.wrap{width:min(1000px,calc(100% - 32px));margin:auto}.topin{height:64px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:system-ui,sans-serif;font-weight:800;letter-spacing:.02em;font-size:15px}.switch{display:flex;gap:4px;padding:4px;background:#ffffff0a;border:1px solid #ffffff14;border-radius:999px;font-family:system-ui,sans-serif;position:relative;z-index:20}.switch label{border:0;background:transparent;color:var(--muted);padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer;font-size:13px;user-select:none;-webkit-user-select:none;display:inline-block}.lang-radio{position:absolute;opacity:0;pointer-events:none;width:0;height:0}.lang{display:none}.top{position:sticky;top:0;z-index:50;background:#060a14e6;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}#lang-ru:checked~.top .switch label[for=lang-ru],#lang-tr:checked~.top .switch label[for=lang-tr]{background:linear-gradient(135deg,var(--p),var(--s));color:#07101d}#lang-ru:checked~#ru,#lang-tr:checked~#tr{display:block}.hero{padding:48px 0 20px}.hero-inner{padding:32px 36px;border-radius:18px;background:linear-gradient(145deg,#ffffff0c,#ffffff05);border:1px solid #ffffff16}.tag{display:inline-block;font-family:system-ui,sans-serif;padding:7px 12px;border-radius:8px;background:#6ea8fe18;border:1px solid #6ea8fe40;color:#c8dcff;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}h1{font-size:clamp(26px,4.2vw,40px);line-height:1.15;margin:16px 0 12px;font-weight:700}.lead{color:var(--muted);font-size:1.05rem;max-width:54ch;margin:0}.audience{margin-top:18px;padding:13px 15px;border-radius:12px;background:#7ee2c712;border:1px solid #7ee2c733;font-family:system-ui,sans-serif;font-size:14px}.audience strong{color:var(--s)}section{padding:26px 0}.head{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}.idx{flex:0 0 auto;width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:#6ea8fe18;border:1px solid #6ea8fe40;font-family:system-ui,sans-serif;font-weight:800;font-size:13px}.head h2{margin:0;font-size:clamp(22px,3vw,30px);line-height:1.2}.head p{margin:6px 0 0;color:var(--muted);font-size:.95rem}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{padding:20px;border-radius:14px;background:#ffffff0a;border:1px solid #ffffff14}.card h3{margin:0 0 8px;font-size:1.1rem}.card p,.muted{color:var(--muted)}.path-a{border-top:3px solid var(--p)}.path-b{border-top:3px solid var(--s)}.path-label{font-family:system-ui,sans-serif;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.path-a .path-label{color:var(--p)}.path-b .path-label{color:var(--s)}.list{list-style:none;padding:0;margin:10px 0 0}.list li{padding-left:22px;position:relative;margin:8px 0;color:var(--muted)}.list li:before{content:'✓';position:absolute;left:0;color:var(--s);font-weight:700;font-family:system-ui,sans-serif}.notice{margin-top:12px;padding:13px 15px;border-left:3px solid var(--a);background:#ffd16610;border-radius:0 10px 10px 0;color:#ffe9a8;font-size:.95rem}.focus{padding:22px;border-radius:14px;background:linear-gradient(135deg,#6ea8fe14,#7ee2c710);border:1px solid #7ee2c728}.questions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.q{padding:13px 14px;border-radius:12px;background:#0004;border:1px solid #ffffff10;font-family:system-ui,sans-serif;font-size:14px}.q .n{color:var(--s);font-weight:800;margin-right:6px}.q.group{grid-column:1/-1;background:transparent;border:0;padding:10px 0 2px;font-weight:800;color:var(--p);font-size:12px;letter-spacing:.05em;text-transform:uppercase}.row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #ffffff10}.row:last-child{border:0}.num{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#7ee2c718;color:var(--s);font-family:system-ui,sans-serif;font-weight:800;font-size:13px;flex:0 0 auto}.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}.step{padding:16px;border-radius:12px;background:#ffffff0a;border:1px solid #ffffff12;display:flex;flex-direction:column;gap:6px}.arrow{display:grid;place-items:center;font-size:20px;color:var(--s);font-family:system-ui,sans-serif;font-weight:800}.diff{margin-top:14px;padding:16px 18px;border-radius:12px;background:#ffffff08;border:1px solid #ffffff12;font-family:system-ui,sans-serif;font-size:14px}.diff strong{color:var(--text)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:18px;border-radius:14px;background:#ffffff0a;border:1px solid #ffffff14;font-family:system-ui,sans-serif}.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700}.stat .v{font-size:1.45rem;font-weight:800;margin-top:6px;color:var(--s)}.stat .s{font-size:13px;color:var(--muted);margin-top:4px}.money{width:100%;border-collapse:collapse;font-family:system-ui,sans-serif;font-size:14px;margin-top:8px}.money th,.money td{padding:11px 12px;text-align:left;border-bottom:1px solid #ffffff12}.money th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.money td.r,.money th.r{text-align:right}.money tr:last-child td{border:0;color:var(--s);font-weight:800}.formula{font-family:system-ui,sans-serif;padding:14px 16px;border-radius:12px;background:#0004;border:1px solid #ffffff12;font-size:14px;margin:12px 0}footer{text-align:center;color:var(--muted);padding:36px 0;font-family:system-ui,sans-serif;font-size:13px}@media(max-width:820px){.grid2,.grid3,.questions{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);padding:4px 0}.hero-inner{padding:24px 20px}.q.group{grid-column:auto}}
+</style>
+</head>
+<body>
+<input class="lang-radio" type="radio" name="lang" id="lang-ru" checked>
+<input class="lang-radio" type="radio" name="lang" id="lang-tr">
+<div class="top"><div class="wrap topin"><div class="brand">Digital Goods · Partner Brief</div><div class="switch" title="Язык / Dil"><label for="lang-ru">RU</label><label for="lang-tr">TR</label></div></div></div>
 
+<div id="ru" class="lang">
+
+<section class="hero"><div class="wrap"><div class="hero-inner">
+<span class="tag">Внутренний бриф · только для партнёра</span>
+<h1>Поиск B2B-поставщика гифт-карт</h1>
+<p class="lead">Нужен турецкий B2B-агрегатор PlayStation Store Turkey Gift Cards. Ниже — два пути работы, как зарабатываем, и что партнёру выяснить у поставщиков.</p>
+<div class="audience"><strong>Кому:</strong> турецкому партнёру. Кнопка <strong>TR</strong> вверху — тот же текст по-турецки. Это не презентация для агрегаторов.</div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">1</div><div><h2>Суть проекта</h2><p>Мы делаем автоматизированную продажу цифровых кодов. Без B2B-поставщика кодов бизнеса нет.</p></div></div>
+<div class="card">
+<p class="muted" style="margin:0">Ищем не розничный магазин для покупателей, а <strong style="color:var(--text)">B2B-компанию</strong>: договор, счёт/инвойс, прайс, API, работа с реселлерами. Старт — PS Turkey Gift Cards; позже можно добавить другие продукты.</p>
+</div>
+<div class="flow" style="margin-top:14px">
+<div class="step"><strong>Покупатель</strong><span class="muted">Оплачивает заказ</span></div>
+<div class="arrow">→</div>
+<div class="step"><strong>Наш магазин</strong><span class="muted">Сервер запрашивает код</span></div>
+<div class="arrow">→</div>
+<div class="step"><strong>B2B-поставщик</strong><span class="muted">Через API отдаёт код</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">2</div><div><h2>Два пути — в чём разница</h2><p>Оба пути могут сочетаться. Партнёр у каждого поставщика проверяет, что реально разрешено.</p></div></div>
+<div class="grid2">
+<div class="card path-a">
+<div class="path-label">Путь A</div>
+<h3>Официальные продажи вне Турции</h3>
+<p>Поставщик <strong style="color:var(--text)">письменно разрешает</strong> продавать турецкие гифт-карты покупателям за пределами Турции.</p>
+<ul class="list">
+<li>В договоре или условиях — нет запрета на продажи abroad / есть явное разрешение</li>
+<li>Каналы (сайт, маркетплейсы и т.д.) выбираем мы сами</li>
+<li>Предпочтительный вариант, если такой поставщик найдётся</li>
+</ul>
+</div>
+<div class="card path-b">
+<div class="path-label">Путь B</div>
+<h3>Турецкий магазин + продажи в РФ</h3>
+<p>Полноценный магазин в Турции: юрлицо, сайт, оплаты, <strong style="color:var(--text)">сервер в Турции</strong>. Продаём в Турцию и в Россию.</p>
+<ul class="list">
+<li>В Турции — обычные продажи турецким покупателям</li>
+<li>В России турецкая карта активируется только с турецким IP</li>
+<li>Мы временно даём покупателю VPN только на активацию карты</li>
+</ul>
+</div>
+</div>
+<div class="diff"><strong>Простыми словами:</strong> Путь A — поставщик сам разрешает продажи за границу. Путь B — мы работаем как турецкий магазин; для покупателей из РФ помогаем с активацией через временный VPN. Это наша операционная часть, её <em>не нужно</em> обсуждать с агрегатором.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">3</div><div><h2>Как зарабатываем</h2><p>Считаем от реальных цифр на сегодня: закуп по номиналу, курс ЦБ РФ, продажи в РФ через Яндекс Маркет.</p></div></div>
+
+<div class="formula"><strong>База:</strong> карта 2 000 ₺ · закуп = 2 000 ₺ · курс ЦБ: <strong>2 000 ₺ = 3 291,81 ₽</strong> · удержания Маркета ≈ <strong>12,8%</strong> (комиссия 9,5% + выплата/прочие 3,3%)</div>
+
+<div class="notice" style="margin-bottom:14px"><strong>Главный рынок — РФ (Яндекс Маркет).</strong> Чтобы после удержаний Маркета просто отбить закуп, на руки нужно получить ≥ 3 291,81 ₽. Значит цена на витрине: <strong>3 291,81 ÷ 0,872 ≈ 3 775 ₽</strong> — это точка нуля (прибыль 0 ₽, ещё до налогов).</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Точка нуля · карта 2 000 ₺</h3>
+<table class="money">
+<thead><tr><th>Статья</th><th class="r">Сумма</th></tr></thead>
+<tbody>
+<tr><td>Закуп (номинал)</td><td class="r">2 000 ₺ = 3 291,81 ₽</td></tr>
+<tr><td>Удержания Яндекс Маркета</td><td class="r">12,8%</td></tr>
+<tr><td>Цена продажи «в ноль»</td><td class="r">≈ 3 775 ₽</td></tr>
+<tr><td>После удержаний останется</td><td class="r">≈ 3 292 ₽</td></tr>
+<tr><td>Прибыль до налогов</td><td class="r">0 ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Какая цена → какая прибыль (до налогов)</h3>
+<p class="muted" style="margin:0 0 8px">Формула: на руки = цена × 0,872 · прибыль = на руки − 3 291,81 ₽</p>
+<table class="money">
+<thead><tr><th>Цель прибыли</th><th class="r">Цена на Маркете</th></tr></thead>
+<tbody>
+<tr><td>100 ₽</td><td class="r">≈ 3 890 ₽</td></tr>
+<tr><td>200 ₽</td><td class="r">≈ 4 005 ₽</td></tr>
+<tr><td>300 ₽</td><td class="r">≈ 4 120 ₽</td></tr>
+<tr><td>500 ₽</td><td class="r">≈ 4 350 ₽</td></tr>
+<tr><td>1 000 ₽</td><td class="r">≈ 4 920 ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Что видно на рынке сейчас</h3>
+<p class="muted" style="margin:0 0 8px">Карты 2 000 ₺ на Яндекс Маркете обычно стоят примерно <strong style="color:var(--text)">4 200–5 000 ₽</strong>. Если закуп действительно по номиналу:</p>
+<table class="money">
+<thead><tr><th>Цена продажи</th><th class="r">На руки (×0,872)</th><th class="r">Прибыль до налогов</th></tr></thead>
+<tbody>
+<tr><td>4 200 ₽</td><td class="r">≈ 3 662 ₽</td><td class="r">≈ 370 ₽</td></tr>
+<tr><td>4 500 ₽</td><td class="r">≈ 3 924 ₽</td><td class="r">≈ 632 ₽</td></tr>
+<tr><td>5 000 ₽</td><td class="r">≈ 4 360 ₽</td><td class="r">≈ 1 068 ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="grid2" style="margin-bottom:14px">
+<div class="card">
+<h3>Стратегия цены</h3>
+<ul class="list">
+<li>Ниже ≈ 3 775 ₽ на Маркете — работа в минус (при закупе по номиналу)</li>
+<li>Можно быть дешевле «верхних» продавцов (5 000 ₽), но не ниже точки нуля</li>
+<li>Комфортный коридор: <strong>4 200–4 500 ₽</strong> → около 370–630 ₽ до налогов с карты</li>
+<li>Демпинг «лишь бы продать» убивает юнит-экономику</li>
+</ul>
+</div>
+<div class="card">
+<h3>Если B2B даст скидку</h3>
+<ul class="list">
+<li>Сейчас в модели закуп = номинал (2 000 ₺)</li>
+<li>Официальный агрегатор часто даёт −3…7% (иногда лучше)</li>
+<li>Пример: −5% → закуп 1 900 ₺ ≈ 3 127 ₽ → при цене 4 200 ₽ прибыль растёт примерно до ~535 ₽ до налогов</li>
+<li>Поиск скидки у поставщика = прямое увеличение прибыли без повышения цены</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Налоги на сегодня (2026) — минимум и реальный доход</h3>
+<p class="muted" style="margin:0 0 10px">Ставки по открытым данным на 2026. Ориентир для плана, не замена бухгалтеру. На Маркете продавец — <strong style="color:var(--text)">ИП или ООО</strong>. Самозанятый (НПД) <em>нельзя</em>: только своё производство, перепродажа чужих кодов запрещена.</p>
+
+<table class="money" style="margin-bottom:12px">
+<thead><tr><th>Что</th><th class="r">2026</th></tr></thead>
+<tbody>
+<tr><td>РФ · УСН «доходы»</td><td class="r">6% с оборота</td></tr>
+<tr><td>РФ · УСН «доходы − расходы»</td><td class="r">15% с прибыли</td></tr>
+<tr><td>РФ · фиксированные взносы ИП</td><td class="r">57 390 ₽ / год</td></tr>
+<tr><td>РФ · доп. взнос 1%</td><td class="r">свыше порога (на УСН 15% — от прибыли)</td></tr>
+<tr><td>TR · налог на прибыль компании</td><td class="r">25%</td></tr>
+</tbody>
+</table>
+
+<div class="notice" style="margin-bottom:12px"><strong>Минимально разумная схема:</strong> ИП на Маркете + <strong>УСН 15%</strong> (не 6%). Турция — закуп с небольшой своей маржой; 25% только с <em>турецкой</em> прибыли. Не платим 15%+25% с одних и тех же 500 ₽.</div>
+
+<h3 style="margin:14px 0 8px;font-size:1.05rem">Карта 2 000 ₺ · цена 4 350 ₽</h3>
+<table class="money">
+<thead><tr><th>Схема</th><th class="r">Налог</th><th class="r">Итог с карты</th></tr></thead>
+<tbody>
+<tr><td>После Маркета</td><td class="r">—</td><td class="r">≈ 500 ₽</td></tr>
+<tr><td>УСН <strong>6%</strong> с оборота</td><td class="r">≈ −261 ₽</td><td class="r">≈ 239 ₽</td></tr>
+<tr><td>УСН <strong>15%</strong> с прибыли</td><td class="r">≈ −75 ₽</td><td class="r">≈ 425 ₽</td></tr>
+<tr><td>УСН 15% + взносы ИП (размазано)</td><td class="r">≈ −90…110 ₽</td><td class="r">≈ 390–410 ₽</td></tr>
+</tbody>
+</table>
+<p class="muted" style="margin:8px 0 12px;font-size:13px">Расходы ~88% цены → для перепродажи гифт-карт УСН 15% выгоднее 6%. Фикс 57 390 ₽/год: при 300 карт/мес ≈ 16 ₽/карта, при 100/мес ≈ 48 ₽/карта.</p>
+
+<table class="money">
+<thead><tr><th>Цена</th><th class="r">После Маркета</th><th class="r">После УСН 15%</th><th class="r">«В карман»*</th></tr></thead>
+<tbody>
+<tr><td>4 200 ₽</td><td class="r">≈ 370 ₽</td><td class="r">≈ 315 ₽</td><td class="r">≈ 280–300 ₽</td></tr>
+<tr><td>4 350 ₽</td><td class="r">≈ 500 ₽</td><td class="r">≈ 425 ₽</td><td class="r">≈ 390–410 ₽</td></tr>
+<tr><td>4 500 ₽</td><td class="r">≈ 632 ₽</td><td class="r">≈ 537 ₽</td><td class="r">≈ 500–520 ₽</td></tr>
+</tbody>
+</table>
+<p class="muted" style="margin:8px 0 0;font-size:13px">*Минус взносы ИП и мелкий TR. Скидка B2B 3–5% добавит ещё ~100–160 ₽ к карману с карты 2 000 ₺.</p>
+</div>
+
+<div class="head" style="margin-top:8px"><div class="idx" style="opacity:.7">≈</div><div><h2 style="font-size:1.25rem">Объём × доход «в карман»</h2><p>При ≈ 4 350 ₽ и ~400 ₽ с карты после УСН 15% и взносов.</p></div></div>
+<div class="grid3">
+<div class="stat">
+<div class="k">Старт · 1–3 мес</div>
+<div class="v">40–100</div>
+<div class="s">карт / мес · оборот ~0,17–0,44 млн ₽</div>
+<div class="s" style="color:var(--s);margin-top:8px">в карман ≈ 15–40 тыс ₽</div>
+</div>
+<div class="stat">
+<div class="k">Рост · 4–8 мес</div>
+<div class="v">200–400</div>
+<div class="s">карт / мес · оборот ~0,9–1,7 млн ₽</div>
+<div class="s" style="color:var(--s);margin-top:8px">в карман ≈ 80–160 тыс ₽</div>
+</div>
+<div class="stat">
+<div class="k">Цель · 9–12 мес</div>
+<div class="v">500–900</div>
+<div class="s">карт / мес · оборот ~2,2–3,9 млн ₽</div>
+<div class="s" style="color:var(--s);margin-top:8px">в карман ≈ 200–360 тыс ₽</div>
+</div>
+</div>
+
+<div class="diff" style="margin-top:14px"><strong>Коротко:</strong> минимум налогов для проекта = <strong>ИП УСН 15%</strong> + TR только на свою маленькую маржу. УСН 6% здесь хуже. Реальный доход с карты 2 000 ₺ при цене 4 200–4 500 ₽ ≈ <strong>280–520 ₽</strong>. Не ноль и не минус.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">4</div><div><h2>Кто что делает</h2></div></div>
+<div class="grid2">
+<div class="card">
+<h3>Турецкий партнёр</h3>
+<ul class="list">
+<li>Компания и банк в Турции</li>
+<li>Поиск B2B-агрегаторов и переговоры на турецком</li>
+<li>Сбор условий: договор, прайс, депозит, API</li>
+<li>По каждому поставщику — ответ: продажи вне Турции разрешены или нет</li>
+<li>Сравнить минимум 5 поставщиков</li>
+</ul>
+</div>
+<div class="card">
+<h3>Техническая сторона</h3>
+<ul class="list">
+<li>Сайт, сервер, админка, автовыдача кодов</li>
+<li>Интеграция API выбранного поставщика</li>
+<li>Каналы продаж (после того как понятны разрешения)</li>
+<li>Временный VPN для активации (Путь B)</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">5</div><div><h2>Кого искать</h2><p>Подходящий поставщик — тот, у кого совпадает продукт и нормальные B2B-условия.</p></div></div>
+<div class="focus">
+<ul class="list" style="margin:0">
+<li>Есть PlayStation Store Turkey Gift Cards</li>
+<li>Работает с новыми компаниями</li>
+<li>Есть API</li>
+<li>Договор и официальные документы/счета</li>
+<li>Можно перепродавать через наш сайт</li>
+<li>Понятные депозит, цены, замена нерабочего кода</li>
+</ul>
+<div class="notice" style="margin-top:14px">Turgame B2B — лишь один из кандидатов. Нужно сравнить несколько, не зависеть от одного.</div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">6</div><div><h2>Что спрашивать у поставщика</h2><p>Короткий список. Ответы — письменно (почта / WhatsApp / коммерческое предложение). Без этого нельзя сравнить поставщиков.</p></div></div>
+<div class="questions">
+<div class="q group">Чтобы подключиться</div>
+<div class="q"><span class="n">1.</span> Работаете с новыми компаниями?</div>
+<div class="q"><span class="n">2.</span> Какие документы нужны?</div>
+<div class="q"><span class="n">3.</span> Какой минимальный депозит / первый заказ?</div>
+
+<div class="q group">Чтобы понять товар и цену</div>
+<div class="q"><span class="n">4.</span> Есть PS Store Turkey Gift Cards? Какие номиналы?</div>
+<div class="q"><span class="n">5.</span> Какая скидка от номинала (прайс)? Валюта?</div>
+<div class="q"><span class="n">6.</span> Меняете нерабочий код?</div>
+
+<div class="q group">Чтобы понять, можем ли продавать как планируем</div>
+<div class="q"><span class="n">7.</span> Можно продавать через наш сайт?</div>
+<div class="q"><span class="n">8.</span> Можно продавать покупателям вне Турции? (да / нет)</div>
+<div class="q"><span class="n">9.</span> Есть API и тестовый доступ?</div>
+</div>
+<div class="notice" style="margin-top:14px"><strong>Не спрашивать:</strong> про VPN и активацию в России — это наша внутренняя тема, не вопрос к агрегатору.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">7</div><div><h2>Что принести в итоге</h2><p>Не список ссылок. По <strong>каждому</strong> поставщику — одна короткая карточка с ответами. Так мы сравним 5+ компаний в одной таблице и выберем основного + запасного.</p></div></div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Шаблон карточки поставщика</h3>
+<p class="muted" style="margin:0 0 12px">Скопировать и заполнить. Если ответа нет — писать «не ответили».</p>
+
+<div class="row"><div class="num">1</div><div>
+<strong>Кто это</strong>
+<div class="muted">Название · сайт · имя и контакт менеджера (телефон / WhatsApp / почта)</div>
+</div></div>
+<div class="row"><div class="num">2</div><div>
+<strong>Цена и вход</strong>
+<div class="muted">Депозит · скидка от номинала (например −3% / −5% / −7%) · валюта · какие документы для старта</div>
+<div class="muted" style="margin-top:4px;color:var(--a)">Зачем: без скидки считаем прибыль на Маркете</div>
+</div></div>
+<div class="row"><div class="num">3</div><div>
+<strong>Товар</strong>
+<div class="muted">Есть ли PS Turkey Gift Cards · какие номиналы (500 / 1000 / 2000 ₺ …) · меняют ли битый код</div>
+</div></div>
+<div class="row"><div class="num">4</div><div>
+<strong>Можно ли продавать вне Турции?</strong>
+<div class="muted">Да / нет / с ограничениями (что именно написали)</div>
+<div class="muted" style="margin-top:4px;color:var(--a)">Зачем: это Путь A — официальные продажи в РФ, в т.ч. Маркет</div>
+</div></div>
+<div class="row"><div class="num">5</div><div>
+<strong>Можно ли наш сайт + есть ли API?</strong>
+<div class="muted">Сайт: да / нет · API: да / нет · есть ли тест</div>
+<div class="muted" style="margin-top:4px;color:var(--a)">Зачем: автоматическая выдача кодов и турецкий магазин</div>
+</div></div>
+</div>
+
+<div class="diff"><strong>Итог работы партнёра:</strong> минимум <strong>5 заполненных карточек</strong> → вместе выбираем 1 основного поставщика и 1 запасного. Кто дал лучшую скидку и «да» на продажи вне Турции — приоритет.</div>
+</div></section>
+
+</div>
+
+<div id="tr" class="lang">
+
+<section class="hero"><div class="wrap"><div class="hero-inner">
+<span class="tag">İç brief · yalnızca ortak için</span>
+<h1>B2B gift card tedarikçisi arayışı</h1>
+<p class="lead">PlayStation Store Turkey Gift Cards için Türk B2B agregatör lazım. Aşağıda: iki yol, nasıl kazanıyoruz ve ortağın tedarikçilerden ne netleştirmesi gerektiği.</p>
+<div class="audience"><strong>Kime:</strong> Türk ortak. Üstteki <strong>TR</strong> düğmesi — aynı metin Türkçe. Agregatörlere sunum değil.</div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">1</div><div><h2>Projenin özü</h2><p>Otomatik dijital kod satışı kuruyoruz. B2B tedarikçi olmadan iş yok.</p></div></div>
+<div class="card">
+<p class="muted" style="margin:0">Perakende mağaza değil; <strong style="color:var(--text)">B2B şirket</strong> arıyoruz: sözleşme, fatura, fiyat listesi, API, reseller çalışması. Başlangıç — PS Turkey Gift Cards.</p>
+</div>
+<div class="flow" style="margin-top:14px">
+<div class="step"><strong>Müşteri</strong><span class="muted">Siparişi öder</span></div>
+<div class="arrow">→</div>
+<div class="step"><strong>Bizim mağaza</strong><span class="muted">Sunucu kod ister</span></div>
+<div class="arrow">→</div>
+<div class="step"><strong>B2B tedarikçi</strong><span class="muted">API ile kod verir</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">2</div><div><h2>İki yol — fark ne?</h2><p>İkisi birlikte de olabilir. Ortak her tedarikçide neyin izinli olduğunu kontrol eder.</p></div></div>
+<div class="grid2">
+<div class="card path-a">
+<div class="path-label">Yol A</div>
+<h3>Türkiye dışı resmi satış</h3>
+<p>Tedarikçi, Türkiye gift card’larının yurt dışı müşterilere satışını <strong style="color:var(--text)">yazılı izinler</strong>.</p>
+<ul class="list">
+<li>Sözleşmede yurt dışı satışa izin / yasak yok</li>
+<li>Kanalları (site, pazaryeri vb.) biz seçeriz</li>
+<li>Böyle tedarikçi bulunursa tercih edilir</li>
+</ul>
+</div>
+<div class="card path-b">
+<div class="path-label">Yol B</div>
+<h3>Türkiye mağazası + RF satış</h3>
+<p>Türkiye’de tam mağaza: şirket, site, ödeme, <strong style="color:var(--text)">sunucu Türkiye’de</strong>. Türkiye’ye ve Rusya’ya satış.</p>
+<ul class="list">
+<li>Türkiye’de normal yerel satış</li>
+<li>RF’de TR kart yalnızca Türk IP ile aktive olur</li>
+<li>Aktivasyon için geçici VPN’i biz veririz</li>
+</ul>
+</div>
+</div>
+<div class="diff"><strong>Kısaca:</strong> Yol A — tedarikçi yurt dışı satışı izinler. Yol B — biz TR mağaza olarak çalışırız; RF müşterisine aktivasyon için geçici VPN veririz. Bu operasyon tarafı agregatörle <em>konuşulmaz</em>.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">3</div><div><h2>Nasıl kazanıyoruz</h2><p>Bugünün gerçek rakamlarıyla: nominal alış, TCMB/CBR kuru, RF’de Yandex Market satışları.</p></div></div>
+
+<div class="formula"><strong>Taban:</strong> 2 000 ₺ kart · alış = 2 000 ₺ · CBR kuru: <strong>2 000 ₺ = 3 291,81 ₽</strong> · Market kesintileri ≈ <strong>%12,8</strong> (komisyon %9,5 + ödeme/diğer %3,3)</div>
+
+<div class="notice" style="margin-bottom:14px"><strong>Ana pazar — RF (Yandex Market).</strong> Market kesintilerinden sonra yalnızca maliyeti kurtarmak için elde ≥ 3 291,81 ₽ kalmalı. Vitrin fiyatı: <strong>3 291,81 ÷ 0,872 ≈ 3 775 ₽</strong> — sıfır noktası (vergi öncesi kâr 0 ₽).</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Sıfır noktası · 2 000 ₺ kart</h3>
+<table class="money">
+<thead><tr><th>Kalem</th><th class="r">Tutar</th></tr></thead>
+<tbody>
+<tr><td>Alış (nominal)</td><td class="r">2 000 ₺ = 3 291,81 ₽</td></tr>
+<tr><td>Yandex Market kesintileri</td><td class="r">%12,8</td></tr>
+<tr><td>«Sıfır» satış fiyatı</td><td class="r">≈ 3 775 ₽</td></tr>
+<tr><td>Kesintilerden sonra kalan</td><td class="r">≈ 3 292 ₽</td></tr>
+<tr><td>Vergi öncesi kâr</td><td class="r">0 ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Hangi fiyat → hangi kâr (vergi öncesi)</h3>
+<p class="muted" style="margin:0 0 8px">Formül: elde = fiyat × 0,872 · kâr = elde − 3 291,81 ₽</p>
+<table class="money">
+<thead><tr><th>Hedef kâr</th><th class="r">Market fiyatı</th></tr></thead>
+<tbody>
+<tr><td>100 ₽</td><td class="r">≈ 3 890 ₽</td></tr>
+<tr><td>200 ₽</td><td class="r">≈ 4 005 ₽</td></tr>
+<tr><td>300 ₽</td><td class="r">≈ 4 120 ₽</td></tr>
+<tr><td>500 ₽</td><td class="r">≈ 4 350 ₽</td></tr>
+<tr><td>1 000 ₽</td><td class="r">≈ 4 920 ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Piyasada şu an ne var</h3>
+<p class="muted" style="margin:0 0 8px">Yandex Market’te 2 000 ₺ kartlar genelde <strong style="color:var(--text)">4 200–5 000 ₽</strong>. Alış gerçekten nominal ise:</p>
+<table class="money">
+<thead><tr><th>Satış fiyatı</th><th class="r">Elde (×0,872)</th><th class="r">Vergi öncesi kâr</th></tr></thead>
+<tbody>
+<tr><td>4 200 ₽</td><td class="r">≈ 3 662 ₽</td><td class="r">≈ 370 ₽</td></tr>
+<tr><td>4 500 ₽</td><td class="r">≈ 3 924 ₽</td><td class="r">≈ 632 ₽</td></tr>
+<tr><td>5 000 ₽</td><td class="r">≈ 4 360 ₽</td><td class="r">≈ 1 068 ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="grid2" style="margin-bottom:14px">
+<div class="card">
+<h3>Fiyat stratejisi</h3>
+<ul class="list">
+<li>Market’te ≈ 3 775 ₽ altı — zarar (nominal alışta)</li>
+<li>«Üst» satıcılardan (5 000 ₽) ucuz olunabilir; sıfırın altına inilmez</li>
+<li>Rahat koridor: <strong>4 200–4 500 ₽</strong> → kart başına ~370–630 ₽ vergi öncesi</li>
+<li>«Ne olursa olsun sat» damping’i birim ekonomisini öldürür</li>
+</ul>
+</div>
+<div class="card">
+<h3>B2B indirimi olursa</h3>
+<ul class="list">
+<li>Modelde şu an alış = nominal (2 000 ₺)</li>
+<li>Resmi agregatör çoğu zaman −%3…7 verir</li>
+<li>Örnek: −%5 → alış 1 900 ₺ ≈ 3 127 ₽ → 4 200 ₽ fiyatta kâr ~535 ₽’ye çıkar</li>
+<li>Tedarikçi indirimi = fiyat artırmadan kâr artışı</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Vergiler bugün (2026) — minimum ve gerçek gelir</h3>
+<p class="muted" style="margin:0 0 10px">2026 açık oranlar. Plan yönü, muhasebeci yerine geçmez. Market satıcısı = <strong style="color:var(--text)">İP veya OOO</strong>. Serbest meslek (NPD) <em>olmaz</em>: yalnızca kendi üretimi, başkasının kodunu satmak yasak.</p>
+
+<table class="money" style="margin-bottom:12px">
+<thead><tr><th>Ne</th><th class="r">2026</th></tr></thead>
+<tbody>
+<tr><td>RF · USN «gelir»</td><td class="r">ciro üzerinden %6</td></tr>
+<tr><td>RF · USN «gelir − gider»</td><td class="r">kâr üzerinden %15</td></tr>
+<tr><td>RF · İP sabit prim</td><td class="r">57 390 ₽ / yıl</td></tr>
+<tr><td>TR · kurumlar vergisi</td><td class="r">%25</td></tr>
+</tbody>
+</table>
+
+<div class="notice" style="margin-bottom:12px"><strong>Minimum mantıklı şema:</strong> Market’te İP + <strong>USN %15</strong> ( %6 değil). TR — alış, küçük kendi marj; %25 yalnız <em>TR kârından</em>. Aynı 500 ₽’ye %15+%25 binmez.</div>
+
+<table class="money">
+<thead><tr><th>Şema (4 350 ₽)</th><th class="r">Vergi</th><th class="r">Kart sonucu</th></tr></thead>
+<tbody>
+<tr><td>Market sonrası</td><td class="r">—</td><td class="r">≈ 500 ₽</td></tr>
+<tr><td>USN <strong>%6</strong> ciro</td><td class="r">≈ −261 ₽</td><td class="r">≈ 239 ₽</td></tr>
+<tr><td>USN <strong>%15</strong> kâr</td><td class="r">≈ −75 ₽</td><td class="r">≈ 425 ₽</td></tr>
+<tr><td>USN %15 + İP prim (yayılmış)</td><td class="r">≈ −90…110 ₽</td><td class="r">≈ 390–410 ₽</td></tr>
+</tbody>
+</table>
+<p class="muted" style="margin:8px 0 12px;font-size:13px">Gider ~%88 → gift card’da USN %15, %6’dan iyi. «Cebе»: 4 200–4 500 ₽ fiyatta ≈ <strong>280–520 ₽</strong> / kart.</p>
+</div>
+
+<div class="head" style="margin-top:8px"><div class="idx" style="opacity:.7">≈</div><div><h2 style="font-size:1.25rem">Hacim × cep geliri</h2><p>≈ 4 350 ₽ ve kart başına ~400 ₽ (USN %15 + prim sonrası).</p></div></div>
+<div class="grid3">
+<div class="stat">
+<div class="k">Başlangıç · 1–3 ay</div>
+<div class="v">40–100</div>
+<div class="s">kart / ay · ciro ~0,17–0,44 milyon ₽</div>
+<div class="s" style="color:var(--s);margin-top:8px">cep ≈ 15–40 bin ₽</div>
+</div>
+<div class="stat">
+<div class="k">Büyüme · 4–8 ay</div>
+<div class="v">200–400</div>
+<div class="s">kart / ay · ciro ~0,9–1,7 milyon ₽</div>
+<div class="s" style="color:var(--s);margin-top:8px">cep ≈ 80–160 bin ₽</div>
+</div>
+<div class="stat">
+<div class="k">Hedef · 9–12 ay</div>
+<div class="v">500–900</div>
+<div class="s">kart / ay · ciro ~2,2–3,9 milyon ₽</div>
+<div class="s" style="color:var(--s);margin-top:8px">cep ≈ 200–360 bin ₽</div>
+</div>
+</div>
+
+<div class="diff" style="margin-top:14px"><strong>Kısaca:</strong> minimum vergi = <strong>İP USN %15</strong> + TR yalnız kendi küçük marjına. USN %6 burada daha kötü. Gerçek kart geliri 4 200–4 500 ₽’de ≈ <strong>280–520 ₽</strong>.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">4</div><div><h2>Kim ne yapar</h2></div></div>
+<div class="grid2">
+<div class="card">
+<h3>Türk ortak</h3>
+<ul class="list">
+<li>Türkiye’de şirket ve banka</li>
+<li>B2B agregatör araştırması ve görüşme</li>
+<li>Sözleşme, fiyat, depozito, API şartlarını toplama</li>
+<li>Her tedarikçide: yurt dışı satış var mı / yok mu</li>
+<li>En az 5 tedarikçi karşılaştırma</li>
+</ul>
+</div>
+<div class="card">
+<h3>Teknik taraf</h3>
+<ul class="list">
+<li>Site, sunucu, panel, otomatik kod teslimi</li>
+<li>Seçilen tedarikçinin API entegrasyonu</li>
+<li>Satış kanalları (izinler netleşince)</li>
+<li>Aktivasyon için geçici VPN (Yol B)</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">5</div><div><h2>Kimi arıyoruz</h2><p>Ürün + sağlam B2B şartları.</p></div></div>
+<div class="focus">
+<ul class="list" style="margin:0">
+<li>PlayStation Store Turkey Gift Cards</li>
+<li>Yeni şirketlerle çalışır</li>
+<li>API vardır</li>
+<li>Sözleşme ve resmi fatura</li>
+<li>Kendi sitemizde yeniden satış mümkün</li>
+<li>Net depozito, fiyat, bozuk kod değişimi</li>
+</ul>
+<div class="notice" style="margin-top:14px">Turgame B2B yalnızca adaylardan biri. Birkaç tedarikçi karşılaştırılmalı.</div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">6</div><div><h2>Tedarikçiye sorular</h2><p>Kısa liste. Cevaplar yazılı (mail / WhatsApp / teklif). Yoksa tedarikçileri karşılaştıramayız.</p></div></div>
+<div class="questions">
+<div class="q group">Bağlanmak için</div>
+<div class="q"><span class="n">1.</span> Yeni şirketlerle çalışıyor musunuz?</div>
+<div class="q"><span class="n">2.</span> Hangi belgeler gerekli?</div>
+<div class="q"><span class="n">3.</span> Minimum depozito / ilk sipariş?</div>
+
+<div class="q group">Ürün ve fiyat için</div>
+<div class="q"><span class="n">4.</span> PS Store Turkey Gift Cards var mı? Nominaler?</div>
+<div class="q"><span class="n">5.</span> Nominalden indirim (fiyat listesi)? Para birimi?</div>
+<div class="q"><span class="n">6.</span> Bozuk kod değişiyor mu?</div>
+
+<div class="q group">Planladığımız satış mümkün mü</div>
+<div class="q"><span class="n">7.</span> Kendi sitemizde satabilir miyiz?</div>
+<div class="q"><span class="n">8.</span> Türkiye dışı müşteriye satış mümkün mü? (evet / hayır)</div>
+<div class="q"><span class="n">9.</span> API ve test erişimi var mı?</div>
+</div>
+<div class="notice" style="margin-top:14px"><strong>Sorulmaz:</strong> VPN ve Rusya’da aktivasyon — iç operasyonumuz, agregatör sorusu değil.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="idx">7</div><div><h2>Ne getirilecek</h2><p>Link listesi değil. <strong>Her</strong> tedarikçi için bir kısa kart. Böyle 5+ firmayı aynı tabloda karşılaştırıp ana + yedek seçeriz.</p></div></div>
+
+<div class="card" style="margin-bottom:14px">
+<h3>Tedarikçi kartı şablonu</h3>
+<p class="muted" style="margin:0 0 12px">Kopyala, doldur. Cevap yoksa «cevap yok» yaz.</p>
+
+<div class="row"><div class="num">1</div><div>
+<strong>Kim</strong>
+<div class="muted">Ad · site · yönetici adı ve iletişim (telefon / WhatsApp / mail)</div>
+</div></div>
+<div class="row"><div class="num">2</div><div>
+<strong>Fiyat ve giriş</strong>
+<div class="muted">Depozito · nominal indirimi (örn. −%3 / −%5 / −%7) · para birimi · başlangıç belgeleri</div>
+<div class="muted" style="margin-top:4px;color:var(--a)">Neden: indirim olmadan Market kârını hesaplayamayız</div>
+</div></div>
+<div class="row"><div class="num">3</div><div>
+<strong>Ürün</strong>
+<div class="muted">PS Turkey Gift Cards var mı · nominaler (500 / 1000 / 2000 ₺ …) · bozuk kod değişimi</div>
+</div></div>
+<div class="row"><div class="num">4</div><div>
+<strong>Türkiye dışı satış mümkün mü?</strong>
+<div class="muted">Evet / hayır / kısıtlı (ne yazdılar)</div>
+<div class="muted" style="margin-top:4px;color:var(--a)">Neden: Yol A — RF’de resmi satış, Market dahil</div>
+</div></div>
+<div class="row"><div class="num">5</div><div>
+<strong>Kendi sitemiz + API?</strong>
+<div class="muted">Site: evet / hayır · API: evet / hayır · test var mı</div>
+<div class="muted" style="margin-top:4px;color:var(--a)">Neden: otomatik kod teslimi ve TR mağaza</div>
+</div></div>
+</div>
+
+<div class="diff"><strong>Ortağın çıktısı:</strong> en az <strong>5 dolu kart</strong> → birlikte 1 ana + 1 yedek seçeriz. En iyi indirim + «Türkiye dışı evet» = öncelik.</div>
+</div></section>
+
+</div>
+
+<footer><div class="wrap">Digital Goods Project · Partner Brief · 2026</div></footer>
+</body>
+</html>
